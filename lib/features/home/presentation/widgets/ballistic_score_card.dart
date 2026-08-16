@@ -33,24 +33,37 @@ class BallisticScoreCard extends StatelessWidget {
         children: <Widget>[
           Row(
             children: <Widget>[
-              const Text('BALLISTIC SCORE', style: AppTextStyles.label),
-              const Spacer(),
-              Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 10,
-                  vertical: 6,
+              const Expanded(
+                child: Text(
+                  'BALLISTIC SCORE',
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: AppTextStyles.label,
                 ),
-                decoration: BoxDecoration(
-                  color: const Color(0x2632D583),
-                  borderRadius: BorderRadius.circular(30),
-                ),
-                child: const Text(
-                  '↑ 4 THIS MONTH',
-                  style: TextStyle(
-                    color: AppColors.green,
-                    fontSize: 10,
-                    fontWeight: FontWeight.w800,
-                    letterSpacing: 0.4,
+              ),
+              const SizedBox(width: 12),
+              Flexible(
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  alignment: Alignment.centerRight,
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 10,
+                      vertical: 6,
+                    ),
+                    decoration: BoxDecoration(
+                      color: const Color(0x2632D583),
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    child: const Text(
+                      '↑ 4 THIS MONTH',
+                      style: TextStyle(
+                        color: AppColors.green,
+                        fontSize: 10,
+                        fontWeight: FontWeight.w800,
+                        letterSpacing: 0.4,
+                      ),
+                    ),
                   ),
                 ),
               ),

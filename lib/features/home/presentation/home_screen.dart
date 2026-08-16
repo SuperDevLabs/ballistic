@@ -4,6 +4,7 @@ import 'package:ballistic/features/home/presentation/widgets/recent_workouts.dar
 import 'package:ballistic/shared/theme/app_colors.dart';
 import 'package:ballistic/shared/theme/app_text_styles.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -111,10 +112,10 @@ class _WideDashboard extends StatelessWidget {
             Expanded(
               flex: 5,
               child: Column(
-                children: const <Widget>[
-                  AnalyzeWorkoutCard(),
-                  SizedBox(height: 22),
-                  _WeeklyFocusCard(),
+                children: <Widget>[
+                  AnalyzeWorkoutCard(onPressed: () => context.push('/analyze')),
+                  const SizedBox(height: 22),
+                  const _WeeklyFocusCard(),
                 ],
               ),
             ),
@@ -132,18 +133,18 @@ class _CompactDashboard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        _WelcomeBlock(),
-        SizedBox(height: 26),
-        BallisticScoreCard(),
-        SizedBox(height: 18),
-        AnalyzeWorkoutCard(),
-        SizedBox(height: 18),
-        _WeeklyFocusCard(),
-        SizedBox(height: 30),
-        RecentWorkouts(),
+        const _WelcomeBlock(),
+        const SizedBox(height: 26),
+        const BallisticScoreCard(),
+        const SizedBox(height: 18),
+        AnalyzeWorkoutCard(onPressed: () => context.push('/analyze')),
+        const SizedBox(height: 18),
+        const _WeeklyFocusCard(),
+        const SizedBox(height: 30),
+        const RecentWorkouts(),
       ],
     );
   }

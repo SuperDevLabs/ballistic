@@ -3,7 +3,9 @@ import 'package:ballistic/shared/theme/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
 class AnalyzeWorkoutCard extends StatelessWidget {
-  const AnalyzeWorkoutCard({super.key});
+  const AnalyzeWorkoutCard({required this.onPressed, super.key});
+
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +45,7 @@ class AnalyzeWorkoutCard extends StatelessWidget {
             width: double.infinity,
             child: FilledButton.icon(
               key: const Key('analyze-workout-button'),
-              onPressed: () {},
+              onPressed: onPressed,
               icon: const Icon(Icons.add_rounded),
               label: const Text('Analyze Workout'),
             ),

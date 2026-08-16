@@ -36,8 +36,15 @@ class RecentWorkouts extends StatelessWidget {
       children: <Widget>[
         Row(
           children: <Widget>[
-            const Text('Recent workouts', style: AppTextStyles.sectionTitle),
-            const Spacer(),
+            const Expanded(
+              child: Text(
+                'Recent workouts',
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: AppTextStyles.sectionTitle,
+              ),
+            ),
+            const SizedBox(width: 8),
             TextButton(
               onPressed: () {},
               child: const Text(
